@@ -1,0 +1,24 @@
+- hosts: loadbalancer
+  tasks:
+          - name: " installing hAproxy for load balancing"
+            package:
+                    name: "haproxy"
+                    state: "present"
+          - name: "installing php..."
+            package: 
+                    name: "php"
+                    state: "present"
+          - name: "starting load balancer..."
+            service:
+                    name: haproxy
+                    state: started 
+          - name: "configurating HAproxy.cfg file"
+            template: 
+                    src: "haproxy.cfg"
+                    dest: "/etc/haproxy/haproxy.cfg"
+          - name: "starting load balancer"
+            service:
+                    name: "haproxy"
+                    state: "started"
+
+

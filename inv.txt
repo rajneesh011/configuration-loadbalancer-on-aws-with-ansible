@@ -1,0 +1,7 @@
+[webserver]
+13.235.103.13 ansible_ssh_user=ec2-user
+52.66.198.81 ansible_ssh_user=ec2-user
+13.233.65.16 ansible_ssh_user=ec2-user
+
+[loadbalancer]
+52.66.247.52  ansible_ssh_user=ec2-user
